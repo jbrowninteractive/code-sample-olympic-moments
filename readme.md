@@ -1,6 +1,6 @@
 # Project #
 
-Google + Claro Olympic Moments Web Application
+Google + Claro Olympic Moments 
 
 ## Description ##
 
