@@ -1,0 +1,27 @@
+
+table
+{
+    text-align: left;
+    width: 100%;
+}
+
+td, th
+{
+    padding: 10px;
+}
+
+tr, td, th
+{
+    border-bottom: 1px dashed #E2E2E2;
+}
+
+table img
+{
+    width: 50px;
+    height: 50px;
+}
+
+.service
+{
+	margin-bottom: 7px;
+}

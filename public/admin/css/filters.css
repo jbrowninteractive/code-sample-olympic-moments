@@ -1,0 +1,21 @@
+#filters
+{
+    display: none;
+    margin-top: 15px;
+}
+
+#filters .heading
+{
+    padding-bottom: 15px;
+}
+
+#filters button
+{
+    margin-left: 10px;
+}
+
+#filters table
+{
+    width: auto;
+}
+

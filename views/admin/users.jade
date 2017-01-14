@@ -1,0 +1,90 @@
+extends layout
+
+block css
+	link(rel="stylesheet", href="/admin/css/users.css")
+
+block js
+	script(src="/admin/lib/sortable.js")
+
+block content
+
+	table.sortable
+
+		tr
+			th image
+			th(filter="id") id
+			th(filter="login.displayName") name
+			th(filter="login.platform") platform
+			th(filter="login.id") login id
+			th(filter="login.email") email
+			th(filter="login.gender") gender
+			th(filter="login.location") location
+			th(filter="login.ip") ip
+			th(filter="login.total") #logins
+			th(filter="login.last") last login
+			th(filter="created") created
+			th(filter="tos.commercial") commercial
+			th(filter="services.google.active") google photos
+			th(filter="services.facebook.active") facebook photos
+			th(filter="services.instagram.active") instagram photos
+			th(filter="services.uploads.active") uploaded photos
+			th(filter="tos.notifications.email") email notifications
+			th(filter="tos.notifications.chrome") chrome notifications
+			th(filter="tos.notifications.facebook") facebook notifications
+			th #moments
+			th(filter="flagged") flagged
+			th #flags
+			th
+
+		each user in users
+			- var flagged = false
+			- var numFlags = 0
+			each moment in user.moments
+				- numFlags += moment.totalFlags || 0
+				if moment.flagged == true
+					- flagged = true
+
+			tr
+				td
+					img.avatar(src="#{user.login.imageUrl}")
+				td= user.id
+				td= user.login.displayName
+				td= user.login.platform
+				td= user.login.id
+				td= user.login.email
+				td= user.login.gender
+				td= user.login.location
+				td= user.login.ip
+				td= user.login.total
+				td
+					// for sorting
+					span.hidden= user.login.last
+					span= brt.convert(user.login.last)
+				td
+					// for sorting
+					span.hidden= user.created
+					span= brt.convert(user.created)
+				td= user.tos.commercial
+				td= user.services.google.active
+				td= user.services.facebook.active
+				td= user.services.instagram.active
+				td= user.services.uploads.active
+				td= user.tos.notifications.email
+				td= user.tos.notifications.chrome
+				td= user.tos.notifications.facebook
+				td
+					if !user.moments || user.moments.length === 0
+						span 0
+					else
+						- var url = "/admin/moments/?filter=userId|=|" + user.id
+						a(href="#{url}") #{user.moments.length}
+				td= flagged
+				td= numFlags
+
+				td
+					if user.isAdmin
+						button.noselect Delete
+					else
+						a(href="/admin/users/delete/" + user.id)
+							button Delete
+

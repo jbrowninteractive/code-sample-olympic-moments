@@ -1,0 +1,64 @@
+doctype html
+
+html
+
+	head
+
+		title= title
+
+		link(rel="stylesheet", href="/admin/css/common.css")
+		link(rel="stylesheet", href="/admin/css/filters.css")
+
+		block css
+
+	body
+
+		div#header
+
+			span.title= title
+
+			span.nav
+
+				a(href="/admin") home
+
+				each permission in permissions
+					a(href="/admin/#{permission}") #{permission}
+
+				a(href="/auth/logout") logout
+
+				img.avatar(src="#{admin.login.imageUrl}")
+
+			div#filters
+				div.heading
+					span Filters
+					button.add Add
+					button.update Update
+				table
+
+			div#pagination
+
+				if nextPage
+					a(href="#{nextPage}") More...
+
+			block save
+
+		div#content
+
+			block content
+
+
+
+
+			if nextPage
+				br
+				a(href="#{nextPage}") More...
+
+
+		script(src="/admin/lib/jquery-3.0.0.min.js")
+		script(src="/admin/lib/moment.js")
+		script(src="/admin/lib/moment-timezone.js")
+		script(src="/admin/js/common.js")
+		script(src="/admin/js/brt.js")
+		script(src="/admin/js/filters.js")
+
+		block js

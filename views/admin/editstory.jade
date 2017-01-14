@@ -1,0 +1,73 @@
+extends layout
+
+block css
+	link(rel="stylesheet", href="/admin/css/editstory.css")
+
+block js
+	script(src="/admin/js/editstory.js")
+
+block content
+
+	form(method="POST", action="/admin/stories/edit/" + story.id, enctype="multipart/form-data")
+		table
+
+
+			tr
+				th Day
+				td= story.day
+
+
+			tr
+				th Position
+				td= story.position
+
+			tr
+				th Date
+				td= brt.convert(story.timestamp)
+
+			tr
+				th Image
+				td
+					input#image-input(accept=".jpg, .jpeg, .png", type="file", name="image")
+
+					br
+					br
+
+					if story.imageUrl
+						div#image-container
+							div#remove-image.button Remove
+							- var url = "/admin/image?src=" + escape(story.imageUrl)
+							a#image-a(href="#{url}", target="_blank")
+								img#story-image(src="#{story.imageUrl}")
+
+					else
+						div#image-container(style="display:none")
+							div#remove-image.button Remove
+							a#image-a(href="", target="_blank")
+								img#story-image
+
+			tr
+				th Caption
+				td
+					input(type="text", name="caption", value="#{story.caption}")
+
+
+			tr
+				th Description
+				td
+					textarea(name="description") #{story.description}
+
+			tr
+				th Weight
+				td
+					select(name="weight")
+
+						option(value="Primary"  selected=story.weight == 'Primary') Primary
+						option(value="Secondary" selected=story.weight == 'Secondary') Secondary
+						option(value="Regular"  selected=story.weight == 'Regular') Regular
+
+		br
+
+		input#remove-input(type="hidden", name="removeImage", value=false)
+		input(type="submit", value="Save")
+

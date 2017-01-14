@@ -1,0 +1,14 @@
+node_modules
+modules/bin/tmp/*.jpg
+.*
+.git
+.gitignore
+*.md
+README.md
+_ref
+tests
+src
+GruntFile.js
+deploy.sh
+gce
+.local

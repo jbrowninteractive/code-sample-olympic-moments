@@ -1,0 +1,135 @@
+
+html, body
+{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+#header
+{
+    padding: 15px;
+    background: #D2D2D2;
+    border-bottom: 1px solid grey;
+}
+
+#header .title
+{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#header .nav
+{
+    float: right;
+}
+
+#header .nav a
+{
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 4px;
+}
+
+#header .nav .avatar
+{
+    float: right;
+    margin-top: -3px;
+    width: 33px;
+}
+
+#header .count
+{
+    margin-bottom: 10px;
+}
+
+
+#content
+{
+    padding: 15px;
+    margin-bottom: 200px;
+    overflow-x: scroll;
+}
+
+table th, form table td
+{
+    padding: 20px 20px 20px 0;
+    vertical-align: top;
+    text-align: left;
+}
+
+form input[type=text]
+{
+    width: 300px;
+    padding: 5px;
+}
+
+
+form textarea
+{
+    padding: 5px;
+    width: 300px;
+    height: 100px;
+}
+
+form img
+{
+    width: 300px;
+    display: block;
+}
+
+.button
+{
+    display: inline-block;
+    background: #EFEFEF;
+    padding: 5px;
+    border: 1px solid #DADADA;
+    cursor: pointer;
+}
+
+.avatar
+{
+    border-radius: 100%;
+}
+
+.noselect
+{
+    user-select: none;
+    opacity: 0.3;
+    outline: none;
+}
+
+.hidden
+{
+    display: none;
+}
+
+table.sortable th
+{
+    cursor: pointer;
+}
+
+
+#pagination
+{
+    margin-top: 15px;
+}
+
+#pagination .number
+{
+	margin: 5px;
+	color: black;
+    font-size: 12px;
+    display: inline-block;
+}
+
+#pagination .number:hover
+{
+	background: grey;
+}
+
+#pagination .number.current
+{
+	color: blue;
+}
+

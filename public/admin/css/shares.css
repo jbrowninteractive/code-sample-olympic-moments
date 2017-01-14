@@ -1,0 +1,48 @@
+table
+{
+    text-align: left;
+    width: 100%;
+}
+
+td, th
+{
+    padding: 10px;
+}
+
+tr, td, th
+{
+    border-bottom: 1px dashed #E2E2E2;
+}
+
+table img
+{
+    width: 400px;
+    cursor: pointer;
+}
+
+.save
+{
+	margin: 15px 0;
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	display: block;
+}
+
+.sortable thead th
+{
+	border-bottom: none;
+	padding-bottom: 5px;
+}
+
+.selectAll td
+{
+	padding: 0 0 5px 7px;
+	font-size: 12px;
+	font-style: italic;
+}
+
+.selectAll td input
+{
+	margin-right: 5px;
+}

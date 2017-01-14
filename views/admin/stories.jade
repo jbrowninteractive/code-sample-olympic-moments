@@ -1,0 +1,53 @@
+extends layout
+
+block css
+	link(rel="stylesheet", href="/admin/css/stories.css")
+	link(rel="stylesheet", href="/admin/css/accordian.css")
+
+block js
+	script(src="/admin/js/accordian.js")
+
+block content
+
+	- var i = 0
+	- var date = null
+
+	each day in days
+		- var date = brt.convert(days[i][0].timestamp, "DD-MM-YY")
+		div.accordian
+			div.ui
+				span.label Day #{++i}
+				span.date= date
+				span.symbol +
+			table
+				tr
+					th.position Position
+					th Time
+					th Id
+					th Image
+					th Caption
+					th Description
+					th Weight
+					th
+				each story in day
+					tr
+						td= story.position
+						td
+							p= brt.convert(story.timestamp, "ha")
+						td= story.id
+						td
+							if story.imageUrl
+								a(href="/admin/image?src=#{escape(story.imageUrl)}",
+								  target="_blank")
+									img(src="#{story.imageUrl}")
+							else
+								p none
+						td= story.caption
+						td= story.description
+						td= story.weight
+						td.edit
+							a(href="/admin/stories/edit/#{story.id}")
+								button Edit
+
+
+

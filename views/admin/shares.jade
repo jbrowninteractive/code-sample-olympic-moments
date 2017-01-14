@@ -1,0 +1,30 @@
+extends layout
+
+block css
+	link(rel="stylesheet", href="/admin/css/shares.css")
+
+block js
+	script(src="/admin/lib/sortable.js")
+
+block content
+
+	table.sortable
+
+		tr
+			th image
+			th(filter="id") id
+			th(filter="momentId") moment id
+			th(filter="userId") user id
+
+		each share in shares
+
+			tr
+				td
+					- var url = "/admin/image?src=" + escape(share.imageUrl)
+					a(href="#{url}", target="_blank")
+						img(src="#{share.imageUrl}")
+				td= share.id
+				td
+					a(href="/admin/moments?filter=id|=|#{share.momentId}") #{share.momentId}
+				td
+					a(href="/admin/users?filter=id|=|#{share.userId}") #{share.userId}

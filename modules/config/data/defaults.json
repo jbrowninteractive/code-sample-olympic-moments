@@ -1,0 +1,78 @@
+{
+	"VIDEO_POST_LIMIT" : 0,
+
+	"VIDEO_SERVER_HOST" : "",
+
+	"VIDEO_SERVER_USER": "",
+
+	"VIDEO_SERVER_PASS": "",
+
+	"NUDITY_API_USER" : "",
+
+	"NUDITY_API_SECRET" : "",
+
+	"NUDITY_MIN_CONFIDENCE" : 0,
+
+	"NUDITY_API_INTERVAL" : 0,
+
+	"MAX_CAPTION_LENGTH" : 0,
+
+	"GAPI_URL" : "",
+
+	"GAPI_USERNAME" : "",
+
+	"GAPI_PASSWORD" : "",
+
+	"HOST": "",
+
+	"PORT": 0,
+
+	"START_DATE" : "",
+
+	"QUIET_LOG": false,
+
+	"SESSION_SECRET": "",
+
+	"GCLOUD_PROJECT": "",
+
+	"GCLOUD_STORY_BUCKET": "",
+
+	"GCLOUD_USER_UPLOADS_BUCKET": "",
+
+	"GCLOUD_USER_VIDEOS_BUCKET": "",
+
+	"GCLOUD_USER_SHARES_BUCKET": "",
+
+	"GOOGLE_CLIENT_ID": "",
+
+	"GOOGLE_CLIENT_SECRET": "",
+
+	"FACEBOOK_APP_ID": "",
+
+	"FACEBOOK_APP_SECRET": "",
+
+	"INSTAGRAM_CLIENT_ID": "",
+
+	"INSTAGRAM_CLIENT_SECRET": "",
+
+	"MAX_UPLOAD_SIZE": 0,
+
+	"MAX_READ_LIMIT": 0,
+
+    "ADMIN_PAGE_LIMIT" : 0,
+
+	"ADMINS": [
+	{
+		"id": "",
+		"platform": "",
+		"permissions": ["stories", "users", "moments", "shares"]
+
+	},
+	{
+		"id": "",
+		"platform": "",
+		"permissions": ["stories", "users", "moments", "shares"]
+
+	}
+  }]
+}

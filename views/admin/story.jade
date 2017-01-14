@@ -1,0 +1,49 @@
+extends layout
+
+block css
+	link(rel="stylesheet", href="/admin/css/story.css")
+
+block content
+
+	table
+
+		tr
+			th Day
+			td= story.day
+
+
+		tr
+			th Position
+			td= story.position
+
+		tr
+			th Date
+			td= new Date(story.timestamp).toUTCString()
+
+		tr
+			th Image
+			td
+				if !story.imageUrl
+					span none
+				else
+					a(href="/admin/image?src=#{escape(story.imageUrl)}", target="_blank")
+						img(src="#{story.imageUrl}")
+
+		tr
+			th Caption
+			td= story.caption
+
+
+		tr
+			th Description
+			td= story.description
+
+		tr
+			th Weight
+			td= story.weight
+
+
+		tr
+			td
+				a(href="/admin/stories/edit/#{story.id}")
+					button Edit

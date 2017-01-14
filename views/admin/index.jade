@@ -1,0 +1,35 @@
+extends layout
+
+block css
+	link(rel="stylesheet", href="/admin/css/index.css")
+
+block content
+
+	div.welcome
+
+		h2 Welcome
+
+		div.name #{admin.login.displayName}
+
+		img.avatar(src="#{admin.login.imageUrl}")
+
+
+
+
+	div.links
+		h2 Quick Links
+
+		a(href="/admin/moments?filter=curated|=|false", target="_blank") All Uncurated Moments
+		a(href="/admin/moments?filter=curated|=|false&filter=service|=|facebook", target="_blank") Facebook Uncurated Moments
+		a(href="/admin/moments?filter=curated|=|false&filter=service|=|google", target="_blank") Google Uncurated Moments
+		a(href="/admin/moments?filter=curated|=|false&filter=service|=|instagram", target="_blank") Instagram Uncurated Moments
+		a(href="/admin/moments?filter=curated|=|false&filter=service|=|uploads", target="_blank") Uploaded Uncurated Moments
+		a(href="/admin/moments?filter=nudity|=|true") Nude Moments
+		a(href="/admin/moments?filter=flagged|=|true") Flagged Moments
+		a(href="/admin/lists/email", target="_blank") Email Notifications List
+		a(href="/admin/lists/facebook", target="_blank") Facebook Notifications List
+
+
+
+
+

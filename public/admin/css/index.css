@@ -1,0 +1,25 @@
+#content
+{
+	text-align: center;
+}
+
+.welcome
+{
+	margin-bottom: 50px;
+}
+
+.welcome .avatar
+{
+    width: 50px;
+}
+
+.welcome .name
+{
+	margin-bottom: 15px;
+}
+
+.links a
+{
+	display: block;
+	margin-bottom: 10px;
+}

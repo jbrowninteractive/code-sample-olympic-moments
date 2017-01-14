@@ -1,0 +1,101 @@
+extends layout
+
+block css
+	link(rel="stylesheet", href="/admin/css/moments.css")
+
+block js
+	script.
+		//- write moments to window object
+		window.moments = !{JSON.stringify(moments)};
+	script(src="/admin/lib/sortable.js")
+	script(src="/admin/js/moments.js")
+
+
+block save
+	button.save(onclick="save()") Save
+
+block content
+
+	table.sortable
+
+		tr
+			th image
+			th(filter="id") id
+			th(filter="storyId") story id
+			th(filter="userId") user id
+			th(filter="caption") caption
+			th(filter="service") service
+			th created
+			th(filter="flagged") flagged
+			th(filter="nudity.scanned") nudity scanned
+			th(filter="nudity.result") nudity result
+			th(filter="curated") curated
+			th delete
+
+
+		tr.selectAll
+			td
+			td
+			td
+			td
+			td
+			td
+			td
+			td
+				input(type="checkbox" onchange="updateAll(this, 'flagged')")
+				span All
+			td
+			td
+				input(type="checkbox" onchange="updateAll(this, 'nudity')")
+				span All
+			td
+				input(type="checkbox" onchange="updateAll(this, 'curated')")
+				span All
+			td
+
+
+
+		each moment in moments
+
+			tr
+				td
+					- var url = "/admin/image?src=" + escape(moment.imageUrl)
+					a(href="#{url}", target="_blank")
+						img(src="#{moment.imageUrl}")
+				td= moment.id
+				td
+					a(href="/admin/moments?filter=storyId|=|#{moment.storyId}") #{moment.storyId}
+
+				td
+					a(href="/admin/moments?filter=userId|=|#{moment.userId}") #{moment.userId}
+				td= moment.caption
+				td= moment.service
+				td
+					// for sorting
+					span.hidden= moment.created
+					span= brt.convert(moment.created)
+				td
+					- var checked = moment.flagged ? "checked" : null
+					span.hidden= moment.flagged
+					input(type="checkbox" id="#{moment.id}" onchange="update(this)"
+						class="flagged"
+						checked=(checked))
+				td= moment.nudity.scanned
+				td
+					- var checked = moment.nudity.result ? "checked" : null
+					span.hidden= moment.nudity.result
+					input(type="checkbox" id="#{moment.id}"  onchange="update(this)"
+						class="nudity"
+						checked=(checked))
+				td
+					- var checked = moment.curated ? "checked" : null
+					span.hidden= moment.curated
+					input(type="checkbox" id="#{moment.id}"  onchange="update(this)"
+						class="curated"
+						checked=(checked))
+				td
+					span.hidden false
+					input(type="checkbox" id="#{moment.id}"  onchange="update(this)"
+						class="delete")
+
+

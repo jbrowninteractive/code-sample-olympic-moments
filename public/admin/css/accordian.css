@@ -1,0 +1,41 @@
+
+.accordian
+{
+    margin-bottom: 15px;
+}
+
+.accordian .ui
+{
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid gray;
+    background: #F7F7F7;
+    cursor: pointer;
+}
+
+.accordian .ui .symbol
+{
+    float: right;
+}
+
+.accordian table
+{
+    display: none;
+    text-align: left;
+    width: 100%;
+}
+
+.accordian td, .accordian th
+{
+    padding: 10px;
+}
+
+.accordian tr, .accordian td, .accordian th
+{
+    border-bottom: 1px dashed #E2E2E2;
+}
+
+.accordian img
+{
+    width: 100px;
+}

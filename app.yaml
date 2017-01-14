@@ -1,0 +1,33 @@
+# Set runtime
+runtime: custom
+vm: true
+
+# always redirect to https
+handlers:
+- url: /.*
+  script: IGNORED
+  secure: always
+
+# set auto-scale configuration
+automatic_scaling:
+  min_num_instances: 5
+  max_num_instances: 500
+  cool_down_period_sec: 120 # default value
+  cpu_utilization:
+    target_utilization: 0.6
+
+# enable health checks for instance auto-scaling
+health_check:
+  enable_health_check: True
+  check_interval_sec: 5
+  timeout_sec: 4
+  unhealthy_threshold: 2
+  healthy_threshold: 2
+  restart_threshold: 60
+
+
+# ---- DO NOT MODIFY ----
+# Environment variable used to set appropriate server configuration
+# Token is replaced via deploy.sh
+env_variables:
+  ENV: <ENV_TOKEN>
