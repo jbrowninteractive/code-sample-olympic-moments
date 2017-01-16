@@ -8,8 +8,8 @@ Google + Claro Olympic Moments
 
 ## Role ##
 
-Complete Back-end Code Base
-Front-end Admin Panel
+Lead Backend-Developer  
+Front-End Admin Panel Developer
 
 ## Images ##
 
