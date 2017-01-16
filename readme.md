@@ -4,7 +4,7 @@ Google + Claro Olympic Moments
 
 ## Description ##
 
-[insert_description]
+
 
 ## Role ##
 
