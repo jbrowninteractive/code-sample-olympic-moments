@@ -4,7 +4,7 @@ Google + Claro Olympic Moments
 
 ## Description ##
 
-
+Web application that allowed users to link photos from various social media accounts and match/share them to a moment that occurred in the 2016 Olympics. The project was built using a Node.js/Express server, Google Datastore for storage and deployed/scaled using GCloud.
 
 ## Role ##
 
